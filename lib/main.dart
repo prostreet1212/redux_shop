@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
+import 'package:redux_shop/redux.dart';
 
 void main() {
   runApp( MyApp());
@@ -21,6 +22,10 @@ class AppState{
       value:value??this.value,
     );
   }
+
+
+
+
 }
 
 final incrementReducer=combineReducers<int>([
@@ -98,7 +103,7 @@ class MyHomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: increase,
       ),
     );
