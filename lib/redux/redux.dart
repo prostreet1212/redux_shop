@@ -77,7 +77,7 @@ class _ViewModel {
 
   static _ViewModel fromStore(Store<AppState> store) => _ViewModel(
       menuList: store.state.menuList,
-      onBuyNot: (coffee) => store.dispatch(BuyNotAction(store.state.menuList)));
+      onBuyNot: (coffee) => store.dispatch(BuyNotAction(store.state.menuList)));//copyWith
 }
 
 class MyApp extends StatelessWidget {

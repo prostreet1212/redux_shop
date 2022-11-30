@@ -7,7 +7,7 @@ class MenuScreen extends StatelessWidget {
       : super(key: key);
 
   final List<CoffeeMenu> menuList;
-  final VoidCallback buyNot;
+  final Function(CoffeeMenu) buyNot;
 
 
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ class MenuScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: buyNot,
+        onPressed: (){},
       ),
     );
   }
