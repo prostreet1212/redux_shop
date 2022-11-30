@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:redux_shop/redux.dart';
+import 'package:redux_shop/redux/redux.dart';
 
 void main() {
   runApp( MyApp());
 }
-
+/*
 class CounterIncrementAction{}
 
 @immutable
@@ -110,5 +110,5 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-
+*/
 
