@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import '../ui/menu_screen.dart';
 
 class BuyNotAction {
-  List<CoffeeMenu> list;
-  BuyNotAction(this.list);
+  CoffeeMenu coffee;
+  BuyNotAction(this.coffee);
 }
 
 @immutable
