@@ -1,11 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:redux_shop/redux/redux.dart';
+import 'package:redux_shop/reducers/reducers.dart';
+import 'package:redux_shop/ui/menu_screen.dart';
+import 'containers/menu_container.dart';
+import 'model/app_state.dart';
 
 void main() {
   runApp( MyApp());
 }
+
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
+
+  final store = Store<AppState>(appReducer, initialState: AppState.initial());
+
+  @override
+  Widget build(BuildContext context) {
+    return StoreProvider(
+        store: store,
+        child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: MenuScreen(),
+        ));
+  }
+}
+
+
+
+
 /*
 class CounterIncrementAction{}
 

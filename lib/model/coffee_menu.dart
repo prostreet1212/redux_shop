@@ -5,4 +5,6 @@ class CoffeeMenu {
   final  bool isBuy = false;
 
   const CoffeeMenu(this.image, this.name, this.price);
+
+
 }

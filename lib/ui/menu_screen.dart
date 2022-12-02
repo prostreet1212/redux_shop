@@ -60,8 +60,7 @@ class MenuScreen extends StatelessWidget {
                                       ? Colors.grey
                                       : Colors.red,
                                 ),
-                                onPressed: () {
-                                },
+                                onPressed: ()=>buyNot(menu),
                               )),
                         )
                       ],
