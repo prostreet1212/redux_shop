@@ -12,10 +12,10 @@ class ConstMenuRepository extends MenuRepository {
   const ConstMenuRepository();
 
   static const List<CoffeeMenu> listMenu = <CoffeeMenu>[
-    CoffeeMenu('latte.jpg', 'Латте', 80),
-    CoffeeMenu('latte_grusha.jpg', 'Латте груша', 100),
-    CoffeeMenu('malina_kokos.jpg', 'Раф малина-кокос', 100),
-    CoffeeMenu('raf.jpg', 'Раф', 100),
+    CoffeeMenu(image: 'latte.jpg', name: 'Латте',price: 80,isBuy: false),
+    CoffeeMenu(image:'latte_grusha.jpg', name:'Латте груша', price: 100,isBuy: false),
+    CoffeeMenu(image:'malina_kokos.jpg', name:'Раф малина-кокос', price: 100,isBuy: false),
+    CoffeeMenu(image:'raf.jpg', name:'Раф', price: 100,isBuy: false),
   ];
 
   @override

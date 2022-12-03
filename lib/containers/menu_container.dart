@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
+import 'package:redux_shop/ui/menu_widget.dart';
 import '../actions/actions.dart';
 import '../model/app_state.dart';
 import '../model/coffee_menu.dart';
-import '../ui/menu_screen.dart';
+
 
 class MenuConnector extends StatelessWidget {
   const MenuConnector({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class MenuConnector extends StatelessWidget {
     return StoreConnector<AppState, _ViewModel>(
       converter: _ViewModel.fromStore,
       builder: (context, vm) {
-        return MenuScreen(menuList: vm.menuList, buyNot: vm.onBuyNot);
+        return MenuWidget(menuList: vm.menuList);
       },
     );
   }
@@ -22,16 +23,16 @@ class MenuConnector extends StatelessWidget {
 
 class _ViewModel {
   final List<CoffeeMenu> menuList;
-  final Function(CoffeeMenu) onBuyNot;
+  //final Function(CoffeeMenu) onBuyNot;
 
-  _ViewModel({required this.menuList, required this.onBuyNot});
+  _ViewModel({required this.menuList});
 
   static _ViewModel fromStore(Store<AppState> store) => _ViewModel(
       menuList: store.state.menuList,
-      onBuyNot: (coffee) {
+      /*onBuyNot: (coffee) {
         store.dispatch(
           BuyNotAction(store.state.menuList[0]),
         );
-      }
+      }*/
   ); //copyWith
 }

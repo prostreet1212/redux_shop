@@ -8,15 +8,17 @@ final buyNotReducer = combineReducers<List<CoffeeMenu>>(
     [TypedReducer<List<CoffeeMenu>, BuyNotAction>(_buyNot)]);
 
 List<CoffeeMenu> _buyNot(List<CoffeeMenu> menuList, BuyNotAction action) {
-  menuList = menuList.map((e) {
+  return menuList.map((e) {
     if (e == action.coffee) {
-      menuList.add(CoffeeMenu(action.coffee.image, action.coffee.name, action.coffee.price,));
-      return action.coffee;
+      return e.copyWith(
+          image: action.coffee.image,
+          name: action.coffee.name,
+          price: action.coffee.price,
+          isBuy: !action.coffee.isBuy);
     } else {
       return e;
     }
   }).toList();
-  return menuList;
 }
 
 AppState appReducer(AppState state, action) {
