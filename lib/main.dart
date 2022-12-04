@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:redux_shop/reducers/reducers.dart';
+import 'package:redux_shop/reducers/app_state_reducer.dart';
 import 'package:redux_shop/ui/menu_screen.dart';
-import 'containers/menu_container.dart';
 import 'model/app_state.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
-  final store = Store<AppState>(appReducer, initialState: AppState.initial());
+  final store = Store<AppState>(
+      appReducer,
+      initialState: AppState.initial(),
+    //middleware:
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +31,6 @@ class MyApp extends StatelessWidget {
         ));
   }
 }
-
-
-
 
 /*
 class CounterIncrementAction{}
@@ -137,4 +137,3 @@ class MyHomePage extends StatelessWidget {
 }
 
 */
-

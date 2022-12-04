@@ -18,7 +18,7 @@ class MenuItemContainer extends StatelessWidget {
         return _ViewModel.fromStore(store, coffee);
       },
       builder: (context, vm) {
-        return MenuItemWidget(coffee: vm.coffee, buyNot: vm.onBuyNot);
+        return MenuItemWidget(coffee: vm.coffee, buyNot: vm.onBuyNot,changeBadgeCount: vm.onChangeBadgeCount,);
       },
     );
   }
@@ -27,8 +27,9 @@ class MenuItemContainer extends StatelessWidget {
 class _ViewModel {
   final CoffeeMenu coffee;
   final Function(CoffeeMenu) onBuyNot;
+  final Function(CoffeeMenu) onChangeBadgeCount;
 
-  _ViewModel({required this.coffee, required this.onBuyNot});
+  _ViewModel({required this.coffee, required this.onBuyNot,required this.onChangeBadgeCount});
 
   static _ViewModel fromStore(Store<AppState> store, CoffeeMenu coffee) {
     final coffeeMenu =
@@ -37,13 +38,16 @@ class _ViewModel {
         coffee: coffeeMenu,
         onBuyNot: (coffee) {
           store.dispatch(
-            BuyNotAction(coffeeMenu.copyWith(
+            BuyNotAction(coffeeMenu/*.copyWith(
                 image: coffee.image,
                 name: coffee.name,
                 price: coffee.price,
-                isBuy: coffee.isBuy)),
+                isBuy: coffee.isBuy)*/),
           );
-        });
-    ;
+        },
+    onChangeBadgeCount: (coffee){
+          store.dispatch(ChangeBadgeCountAction(coffeeMenu));
+    }
+    );
   } //copyWith
 }

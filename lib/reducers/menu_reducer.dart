@@ -1,7 +1,5 @@
 import 'package:redux/redux.dart';
-
 import '../actions/actions.dart';
-import '../model/app_state.dart';
 import '../model/coffee_menu.dart';
 
 final menuReducer = combineReducers<List<CoffeeMenu>>(
@@ -21,6 +19,4 @@ List<CoffeeMenu> _buyNot(List<CoffeeMenu> menuList, BuyNotAction action) {
   }).toList();
 }
 
-AppState appReducer(AppState state, action) {
-  return state.copyWith(menuList: menuReducer(state.menuList, action));
-}
+

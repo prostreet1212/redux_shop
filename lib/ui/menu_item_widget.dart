@@ -3,9 +3,10 @@ import 'package:redux_shop/model/coffee_menu.dart';
 
 class MenuItemWidget extends StatelessWidget {
 
-   MenuItemWidget({Key? key,required this.coffee,required this.buyNot}) : super(key: key);
+   MenuItemWidget({Key? key,required this.coffee,required this.buyNot,required this.changeBadgeCount}) : super(key: key);
   CoffeeMenu coffee;
   Function buyNot;
+  Function changeBadgeCount;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +43,10 @@ class MenuItemWidget extends StatelessWidget {
                               ? Colors.grey
                               : Colors.red,
                         ),
-                        onPressed: ()=>buyNot(coffee),
+                        onPressed: (){
+                          buyNot(coffee);
+                          changeBadgeCount(coffee);
+                        },
                     ),
                   ),
                 )
