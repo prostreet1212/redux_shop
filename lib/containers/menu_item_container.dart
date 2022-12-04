@@ -8,7 +8,7 @@ import '../model/app_state.dart';
 import '../model/coffee_menu.dart';
 
 class MenuItemContainer extends StatelessWidget {
-   MenuItemContainer({Key? key,required this.coffee}) : super(key: key);
+  MenuItemContainer({Key? key, required this.coffee}) : super(key: key);
   CoffeeMenu coffee;
 
   @override
@@ -18,7 +18,7 @@ class MenuItemContainer extends StatelessWidget {
         return _ViewModel.fromStore(store, coffee);
       },
       builder: (context, vm) {
-        return MenuItemWidget(coffee: vm.coffee,buyNot:vm.onBuyNot);
+        return MenuItemWidget(coffee: vm.coffee, buyNot: vm.onBuyNot);
       },
     );
   }
@@ -28,18 +28,22 @@ class _ViewModel {
   final CoffeeMenu coffee;
   final Function(CoffeeMenu) onBuyNot;
 
-  _ViewModel({required this.coffee,required this.onBuyNot});
+  _ViewModel({required this.coffee, required this.onBuyNot});
 
-  static _ViewModel fromStore(Store<AppState> store,CoffeeMenu coffee) {
-    final coffeeMenu=store.state.menuList.firstWhere((element) => element==coffee);
+  static _ViewModel fromStore(Store<AppState> store, CoffeeMenu coffee) {
+    final coffeeMenu =
+        store.state.menuList.firstWhere((element) => element == coffee);
     return _ViewModel(
-
-        coffee:coffeeMenu ,
+        coffee: coffeeMenu,
         onBuyNot: (coffee) {
           store.dispatch(
-            BuyNotAction(coffeeMenu.copyWith(image: coffee.image, name: coffee.name, price: coffee.price, isBuy: coffee.isBuy)),
+            BuyNotAction(coffeeMenu.copyWith(
+                image: coffee.image,
+                name: coffee.name,
+                price: coffee.price,
+                isBuy: coffee.isBuy)),
           );
-        }
-    );;
+        });
+    ;
   } //copyWith
 }

@@ -4,7 +4,7 @@ import '../actions/actions.dart';
 import '../model/app_state.dart';
 import '../model/coffee_menu.dart';
 
-final buyNotReducer = combineReducers<List<CoffeeMenu>>(
+final menuReducer = combineReducers<List<CoffeeMenu>>(
     [TypedReducer<List<CoffeeMenu>, BuyNotAction>(_buyNot)]);
 
 List<CoffeeMenu> _buyNot(List<CoffeeMenu> menuList, BuyNotAction action) {
@@ -22,5 +22,5 @@ List<CoffeeMenu> _buyNot(List<CoffeeMenu> menuList, BuyNotAction action) {
 }
 
 AppState appReducer(AppState state, action) {
-  return state.copyWith(menuList: buyNotReducer(state.menuList, action));
+  return state.copyWith(menuList: menuReducer(state.menuList, action));
 }
