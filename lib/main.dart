@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
+import 'package:redux_shop/actions/actions.dart';
+import 'package:redux_shop/middleware/store_middleware.dart';
 import 'package:redux_shop/reducers/app_state_reducer.dart';
 import 'package:redux_shop/ui/menu_screen.dart';
 import 'model/app_state.dart';
@@ -15,19 +17,27 @@ class MyApp extends StatelessWidget {
   final store = Store<AppState>(
       appReducer,
       initialState: AppState.initial(),
-    //middleware:
+    middleware:createStoreMiddleware()
   );
 
   @override
   Widget build(BuildContext context) {
-    return StoreProvider(
+    return StoreProvider<AppState>(
         store: store,
         child: MaterialApp(
           title: 'Flutter Demo',
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: MenuScreen(),
+         routes: {
+            '/':(context){
+              return MenuScreen(onInit: (){
+                StoreProvider.of<AppState>(context).dispatch(LoadMenuAction());});
+            }
+         },
+         /* home: MenuScreen(onInit:(){
+            StoreProvider.of<AppState>(context).dispatch(LoadMenuAction());
+          } ,),*/
         ));
   }
 }

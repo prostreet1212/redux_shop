@@ -9,3 +9,17 @@ class ChangeBadgeCountAction{
   CoffeeMenu coffee;
   ChangeBadgeCountAction(this.coffee);
 }
+
+class LoadMenuAction {}
+
+class MenuLoadedAction {
+  final List<CoffeeMenu> menuList;
+  MenuLoadedAction(this.menuList);
+}
+
+class LoadBadgeAction {}
+
+class BadgeLoadedAction {
+  final List<CoffeeMenu> badgeList;
+  BadgeLoadedAction(this.badgeList);
+}

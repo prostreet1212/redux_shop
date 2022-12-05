@@ -3,7 +3,7 @@ import '../model/coffee_menu.dart';
 abstract class MenuRepository {
   const MenuRepository();
 
-  List<CoffeeMenu> getListMenu();
+  List<CoffeeMenu> loadMenu();
 
   void changeMenuStatus(CoffeeMenu coffeeMenu);
 }
@@ -19,7 +19,7 @@ class ConstMenuRepository extends MenuRepository {
   ];
 
   @override
-  List<CoffeeMenu> getListMenu() {
+  List<CoffeeMenu>  loadMenu() {
     return listMenu;
   }
 

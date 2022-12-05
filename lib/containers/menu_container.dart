@@ -23,12 +23,14 @@ class MenuConnector extends StatelessWidget {
 
 class _ViewModel {
   final List<CoffeeMenu> menuList;
+
   //final Function(CoffeeMenu) onBuyNot;
 
-  _ViewModel({required this.menuList});
+  _ViewModel({required this.menuList,});
 
   static _ViewModel fromStore(Store<AppState> store) => _ViewModel(
       menuList: store.state.menuList,
+
       /*onBuyNot: (coffee) {
         store.dispatch(
           BuyNotAction(store.state.menuList[0]),

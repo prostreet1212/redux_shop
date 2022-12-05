@@ -6,8 +6,9 @@ class AppState {
   final List<CoffeeMenu> menuList;
   final List<CoffeeMenu> badgeList;
 
+
   const AppState(
-      {this.menuList = const [
+      {this.menuList = const [/*
         CoffeeMenu(image: 'latte.jpg', name: 'Латте', price: 80, isBuy: false),
         CoffeeMenu(
             image: 'latte_grusha.jpg',
@@ -20,8 +21,8 @@ class AppState {
             price: 100,
             isBuy: false),
         CoffeeMenu(image: 'raf.jpg', name: 'Раф', price: 100, isBuy: false),
-      ],
-      this.badgeList = const []});
+     */ ],
+      this.badgeList = const [],});
 
   factory AppState.initial() => const AppState();
 

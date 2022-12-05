@@ -3,10 +3,13 @@ import '../actions/actions.dart';
 import '../model/coffee_menu.dart';
 
 final menuReducer = combineReducers<List<CoffeeMenu>>(
-    [TypedReducer<List<CoffeeMenu>, BuyNotAction>(_buyNot)]);
+    [TypedReducer<List<CoffeeMenu>, BuyNotAction>(_buyNot),
+      TypedReducer<List<CoffeeMenu>, MenuLoadedAction>(_setLoadedMenu),
+
+    ]);
 
 List<CoffeeMenu> _buyNot(List<CoffeeMenu> menuList, BuyNotAction action) {
-  return menuList.map((e) {
+  menuList= menuList.map((e) {
     if (e == action.coffee) {
       return e.copyWith(
           image: action.coffee.image,
@@ -17,6 +20,13 @@ List<CoffeeMenu> _buyNot(List<CoffeeMenu> menuList, BuyNotAction action) {
       return e;
     }
   }).toList();
+  return menuList;
 }
+List<CoffeeMenu> _setLoadedMenu(List<CoffeeMenu> speakers, MenuLoadedAction action) {
+  return action.menuList;
+}
+
+
+
 
 
