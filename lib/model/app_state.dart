@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 @immutable
 class AppState {
-  final List<CoffeeMenu> menuList;
+   List<CoffeeMenu> menuList;
   final List<CoffeeMenu> badgeList;
 
 
-  const AppState(
+   AppState(
       {this.menuList = const [/*
         CoffeeMenu(image: 'latte.jpg', name: 'Латте', price: 80, isBuy: false),
         CoffeeMenu(
@@ -24,7 +24,7 @@ class AppState {
      */ ],
       this.badgeList = const [],});
 
-  factory AppState.initial() => const AppState();
+  factory AppState.initial() =>  AppState();
 
   AppState copyWith({List<CoffeeMenu>? menuList, List<CoffeeMenu>? badgeList}) {
     return AppState(

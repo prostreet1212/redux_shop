@@ -6,7 +6,7 @@ class CoffeeMenu {
 
   const CoffeeMenu({required this.image, required this.name, required this.price,required this.isBuy});
 
-  CoffeeMenu copyWith({required String? image, required String? name, required double? price, required bool? isBuy}) {
+  CoffeeMenu copyWith({ String? image,  String? name,  double? price,  bool? isBuy}) {
     return CoffeeMenu(
       image: image ?? this.image,
       name: name ?? this.name,

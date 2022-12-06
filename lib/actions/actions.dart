@@ -13,7 +13,7 @@ class ChangeBadgeCountAction{
 class LoadMenuAction {}
 
 class MenuLoadedAction {
-  final List<CoffeeMenu> menuList;
+   List<CoffeeMenu> menuList;
   MenuLoadedAction(this.menuList);
 }
 
@@ -27,3 +27,5 @@ class BadgeLoadedAction {
 
 class ChangeBuyStatus{}
 class ClearBadgeAction {}
+
+
