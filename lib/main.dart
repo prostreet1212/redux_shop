@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_shop/actions/actions.dart';
 import 'package:redux_shop/middleware/store_middleware.dart';
 import 'package:redux_shop/reducers/app_state_reducer.dart';
+import 'package:redux_shop/ui/badge_screen.dart';
 import 'package:redux_shop/ui/menu_screen.dart';
 import 'model/app_state.dart';
 
@@ -24,21 +26,33 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreProvider<AppState>(
         store: store,
-        child: MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-         routes: {
-            '/':(context){
-              return MenuScreen(onInit: (){
-                StoreProvider.of<AppState>(context).dispatch(LoadMenuAction());});
-            }
-         },
-         /* home: MenuScreen(onInit:(){
+        child: OKToast(
+          textStyle: const TextStyle(fontSize: 19.0, color: Colors.white),
+          backgroundColor: const Color.fromARGB(113, 145, 148, 139),
+          position: ToastPosition.bottom,
+          textPadding: const EdgeInsets.all(8),
+          duration: const Duration(seconds: 3),
+          child: MaterialApp(
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+            routes: {
+              '/':(context){
+                return MenuScreen(onInit: (){
+                  StoreProvider.of<AppState>(context).dispatch(LoadMenuAction());});
+              },
+              '/badge':(context){
+                return BadgeScreen(onInit: (){
+                  StoreProvider.of<AppState>(context).dispatch(LoadBadgeAction());});
+              },
+            },
+            /* home: MenuScreen(onInit:(){
             StoreProvider.of<AppState>(context).dispatch(LoadMenuAction());
           } ,),*/
-        ));
+          ),
+        )
+    );
   }
 }
 

@@ -19,9 +19,7 @@ class BadgeWidget extends StatelessWidget {
             child: IconButton(
               icon: const Icon(Icons.shopping_cart),
               onPressed: () {
-               /* Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const BadgeScreen();
-                }));*/
+                Navigator.pushNamed(context, '/badge');
               },
             ),
           );

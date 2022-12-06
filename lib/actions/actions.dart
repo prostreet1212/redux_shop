@@ -23,3 +23,7 @@ class BadgeLoadedAction {
   final List<CoffeeMenu> badgeList;
   BadgeLoadedAction(this.badgeList);
 }
+
+
+class ChangeBuyStatus{}
+class ClearBadgeAction {}
