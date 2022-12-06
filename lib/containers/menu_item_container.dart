@@ -8,8 +8,8 @@ import '../model/app_state.dart';
 import '../model/coffee_menu.dart';
 
 class MenuItemContainer extends StatelessWidget {
-  MenuItemContainer({Key? key, required this.coffee}) : super(key: key);
-  CoffeeMenu coffee;
+  const MenuItemContainer({Key? key, required this.coffee}) : super(key: key);
+  final CoffeeMenu coffee;
 
   @override
   Widget build(BuildContext context) {

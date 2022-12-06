@@ -21,7 +21,7 @@ class _BadgeScreenState extends State<BadgeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: BadgeConnector(),
+      body: const BadgeConnector(),
     );
   }
 }

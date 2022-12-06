@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import '../model/coffee_menu.dart';
 
 class BadgeWidget extends StatelessWidget {
-   BadgeWidget({
+   const BadgeWidget({
     Key? key,required this.badgeList,
   }) : super(key: key);
- List<CoffeeMenu> badgeList;
+ final List<CoffeeMenu> badgeList;
 
 
   @override

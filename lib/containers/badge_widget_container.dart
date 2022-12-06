@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:redux_shop/actions/actions.dart';
 import 'package:redux_shop/model/coffee_menu.dart';
 import 'package:redux_shop/ui/badge_widget.dart';
-
 import '../model/app_state.dart';
 
 class BadgeWidgetContainer extends StatelessWidget {
-  BadgeWidgetContainer({Key? key, required this.coffee}) : super(key: key);
-  CoffeeMenu coffee;
+   const BadgeWidgetContainer({Key? key, required this.coffee}) : super(key: key);
+  final CoffeeMenu coffee;
 
   @override
   Widget build(BuildContext context) {

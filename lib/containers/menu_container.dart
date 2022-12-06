@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_shop/ui/menu_widget.dart';
-import '../actions/actions.dart';
+
 import '../model/app_state.dart';
 import '../model/coffee_menu.dart';
 

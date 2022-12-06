@@ -4,10 +4,10 @@ import 'package:oktoast/oktoast.dart';
 import '../model/coffee_menu.dart';
 
 class BadgeListWidget extends StatelessWidget {
-   BadgeListWidget({Key? key,required this.badgeList,required this.clearBadge,required this.changeBuyStatus}) : super(key: key);
-  List<CoffeeMenu> badgeList;
-  Function clearBadge;
-  Function changeBuyStatus;
+   const BadgeListWidget({Key? key,required this.badgeList,required this.clearBadge,required this.changeBuyStatus}) : super(key: key);
+  final List<CoffeeMenu> badgeList;
+  final Function clearBadge;
+  final Function changeBuyStatus;
 
   @override
   Widget build(BuildContext context) {
