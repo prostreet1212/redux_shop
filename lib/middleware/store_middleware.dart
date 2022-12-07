@@ -11,12 +11,10 @@ List<Middleware<AppState>> createStoreMiddleware([
 ]) {
   final loadMenu = _createLoadMenu(menuRepo);
   final loadBadge = _createLoadBadge(badgeRepo);
-  //final saveMenu = _createSaveMenu(menuRepo);
 
   return [
     TypedMiddleware<AppState, LoadMenuAction>(loadMenu),
     TypedMiddleware<AppState,LoadBadgeAction>(loadBadge),
-    //TypedMiddleware<AppState, UpdateMenuAction>(saveMenu),
 
   ];
 }
