@@ -8,20 +8,7 @@ class AppState {
 
 
    AppState(
-      {this.menuList = const [/*
-        CoffeeMenu(image: 'latte.jpg', name: 'Латте', price: 80, isBuy: false),
-        CoffeeMenu(
-            image: 'latte_grusha.jpg',
-            name: 'Латте груша',
-            price: 100,
-            isBuy: false),
-        CoffeeMenu(
-            image: 'malina_kokos.jpg',
-            name: 'Раф малина-кокос',
-            price: 100,
-            isBuy: false),
-        CoffeeMenu(image: 'raf.jpg', name: 'Раф', price: 100, isBuy: false),
-     */ ],
+      {this.menuList = const [],
       this.badgeList = const [],});
 
   factory AppState.initial() =>  AppState();

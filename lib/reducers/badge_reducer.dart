@@ -17,7 +17,7 @@ List<CoffeeMenu> _changeBadgeCount(List<CoffeeMenu> badgeList, BuyNotAction acti
  if(action.coffee.isBuy){
    badgeList=[...badgeList,action.coffee];
  }else{
-   badgeList=[...badgeList]..remove(action.coffee);
+   badgeList=[...badgeList]..remove(action.coffee.copyWith(isBuy:!action.coffee.isBuy));
  }
  return badgeList;
 }
