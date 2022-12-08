@@ -24,7 +24,7 @@ List<CoffeeMenu> _changeBadgeCount(List<CoffeeMenu> badgeList, BuyNotAction acti
 
 
 
-List<CoffeeMenu> _setLoadedBadge(List<CoffeeMenu> speakers, BadgeLoadedAction action) {
+List<CoffeeMenu> _setLoadedBadge(List<CoffeeMenu> badgeList, BadgeLoadedAction action) {
   return action.badgeList;
 }
 

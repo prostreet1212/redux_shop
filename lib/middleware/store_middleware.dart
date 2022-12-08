@@ -21,9 +21,9 @@ List<Middleware<AppState>> createStoreMiddleware([
 
 Middleware<AppState> _createLoadMenu(MenuRepository repository) {
   return (Store<AppState> store, action, NextDispatcher next) {
-    var a = repository.loadMenu();
+    var list = repository.loadMenu();
     store.dispatch(
-      MenuLoadedAction(a),
+      MenuLoadedAction(list),
     );
     next(action);
   };
@@ -38,12 +38,4 @@ Middleware<AppState> _createLoadBadge(BadgeRepository repository) {
     next(action);
   };
 }
-/*
-Middleware<AppState> _createSaveMenu(MenuRepository repository) {
-  return (Store<AppState> store, action, NextDispatcher next) {
-    next(action);
-    repository.saveMenu(
-      store.state.menuList,
-    );
-  };
-}*/
+

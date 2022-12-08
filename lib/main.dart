@@ -47,9 +47,6 @@ class MyApp extends StatelessWidget {
                   StoreProvider.of<AppState>(context).dispatch(LoadBadgeAction());});
               },
             },
-            /* home: MenuScreen(onInit:(){
-            StoreProvider.of<AppState>(context).dispatch(LoadMenuAction());
-          } ,),*/
           ),
         )
     );
